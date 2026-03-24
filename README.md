@@ -11,6 +11,20 @@ Lua-based Neovim config migrated from a long-running vimrc (originally forked 20
 
 ## Installation
 
+### 1. Install Neovim
+
+macOS / Linux (Homebrew):
+```bash
+brew install neovim
+```
+
+Windows (winget):
+```powershell
+winget install Neovim.Neovim
+```
+
+### 2. Clone this repo
+
 Clone this repo into the Neovim config directory:
 
 Linux / macOS:
