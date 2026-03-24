@@ -13,11 +13,13 @@ Lua-based Neovim config migrated from a long-running vimrc (originally forked 20
 
 Clone this repo into the Neovim config directory:
 
+Linux / macOS:
 ```bash
-# Linux / macOS
 git clone https://github.com/jonathanau/nvim-config.git ~/.config/nvim
+```
 
-# Windows (PowerShell)
+Windows (PowerShell):
+```powershell
 git clone https://github.com/jonathanau/nvim-config.git $env:LOCALAPPDATA\nvim
 ```
 
