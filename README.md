@@ -29,12 +29,12 @@ Clone this repo into the Neovim config directory:
 
 Linux / macOS:
 ```bash
-git clone https://github.com/jonathanau/nvim-config.git ~/.config/nvim
+git clone https://github.com/jonathanau/neovim-config.git ~/.config/nvim
 ```
 
 Windows (PowerShell):
 ```powershell
-git clone https://github.com/jonathanau/nvim-config.git $env:LOCALAPPDATA\nvim
+git clone https://github.com/jonathanau/neovim-config.git $env:LOCALAPPDATA\nvim
 ```
 
 Launch Neovim. On first run, lazy.nvim will auto-install itself and all plugins. Mason will then download the configured language servers.
