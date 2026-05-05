@@ -91,17 +91,17 @@ Run `:Mason` to manage servers interactively.
 
 If you use [Ghostty](https://ghostty.org/) on macOS, you can create a native application bundle to launch Neovim directly from Spotlight (or your Dock) rather than opening a terminal first. 
 
-This creates a lightweight `Neovim.app` wrapper that automatically opens a new Ghostty instance and passes it the Neovim execution flag.
+This creates a lightweight `Nvim.app` wrapper that automatically opens a new Ghostty instance and passes it the Neovim execution flag.
 
 ### 1. Create the App Bundle
 Open your terminal and run the following commands. This creates the macOS app directory structure and writes the launch script:
 
 ```bash
 # Create the app bundle structure
-mkdir -p /Applications/Neovim.app/Contents/MacOS
+mkdir -p /Applications/Nvim.app/Contents/MacOS
 
 # Create the executable script
-cat << 'EOF' > /Applications/Neovim.app/Contents/MacOS/Neovim
+cat << 'EOF' > /Applications/Nvim.app/Contents/MacOS/Nvim
 #!/bin/bash
 
 # Define Homebrew path (handles both Apple Silicon and Intel Macs)
@@ -115,7 +115,7 @@ open -na Ghostty --args -e "$NVIM_PATH" "$@"
 EOF
 
 # Make the script executable
-chmod +x /Applications/Neovim.app/Contents/MacOS/Neovim
+chmod +x /Applications/Nvim.app/Contents/MacOS/Nvim
 ```
 *(Note: If you prefer Neovim to open as a new window inside your already-running Ghostty instance instead of a separate Dock icon, replace the `open` line above with `/Applications/Ghostty.app/Contents/MacOS/ghostty +new-window -e "$NVIM_PATH" "$@"`).*
 
@@ -124,12 +124,12 @@ To make the app look native in your Dock and Spotlight, apply a custom Neovim ic
 
 1. Download a Neovim logo in `.icns` format (e.g., [this Reddit post](https://www.reddit.com/r/neovim/comments/13713rq/i_made_a_neovim_icon_for_macos_download_link_in/) has a great macOS-style version).
 2. Select the downloaded `.icns` file in Finder and copy it (`Cmd + C`).
-3. Navigate to your `/Applications` folder, right-click your newly created **Neovim.app**, and click **Get Info** (`Cmd + I`).
+3. Navigate to your `/Applications` folder, right-click your newly created **Nvim.app**, and click **Get Info** (`Cmd + I`).
 4. Click the small app icon in the top-left corner of the Get Info window (it will highlight with a blue outline).
 5. Paste the icon (`Cmd + V`).
 
 ### 3. Index for Spotlight
 macOS needs to register the new app before it shows up in Spotlight searches:
 1. Navigate to `/Applications` in Finder.
-2. Double-click **Neovim.app** to open it manually for the first time.
-3. Once opened, macOS LaunchServices will index it. You can now launch Neovim directly by pressing `Cmd + Space` and typing **Neovim**.
+2. Double-click **Nvim.app** to open it manually for the first time.
+3. Once opened, macOS LaunchServices will index it. You can now launch Neovim directly by pressing `Cmd + Space` and typing **Nvim**.
