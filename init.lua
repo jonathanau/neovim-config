@@ -184,6 +184,29 @@ autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+-- Markdown soft-wrap settings
+augroup("MarkdownWrap", { clear = true })
+autocmd("FileType", {
+  group = "MarkdownWrap",
+  pattern = "markdown",
+  callback = function()
+    local wo = vim.wo
+    wo.wrap = true           -- visual line wrapping at window edge
+    wo.linebreak = true      -- break at word boundaries, not mid-word
+    wo.breakindent = true    -- indent wrapped lines to match context
+    wo.showbreak = "  "      -- visual indent for continuation lines
+    vim.bo.textwidth = 0     -- disable hard wrapping
+    vim.bo.formatoptions = vim.bo.formatoptions:gsub("t", "")  -- no auto-wrap text
+    vim.bo.formatoptions = vim.bo.formatoptions:gsub("c", "")  -- no auto-wrap comments
+
+    -- Navigate by visual line (buffer-local, markdown only)
+    vim.keymap.set("n", "j", "gj", { buffer = true })
+    vim.keymap.set("n", "k", "gk", { buffer = true })
+    vim.keymap.set("n", "0", "g0", { buffer = true })
+    vim.keymap.set("n", "$", "g$", { buffer = true })
+  end,
+})
+
 --------------------------------------------------------------------------------
 -- Plugin Manager: lazy.nvim (auto-bootstrap)
 --------------------------------------------------------------------------------
