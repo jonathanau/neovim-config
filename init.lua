@@ -194,7 +194,7 @@ autocmd("FileType", {
     wo.wrap = true           -- visual line wrapping at window edge
     wo.linebreak = true      -- break at word boundaries, not mid-word
     wo.breakindent = true    -- indent wrapped lines to match context
-    wo.showbreak = "  "      -- visual indent for continuation lines
+    wo.showbreak = ""
     vim.bo.textwidth = 0     -- disable hard wrapping
     vim.bo.formatoptions = vim.bo.formatoptions:gsub("t", "")  -- no auto-wrap text
     vim.bo.formatoptions = vim.bo.formatoptions:gsub("c", "")  -- no auto-wrap comments
