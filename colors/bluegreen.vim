@@ -49,7 +49,8 @@ hi FoldColumn	guibg=#800080 guifg=tan
 hi IncSearch	guifg=#B0FFFF guibg=#2050D0 ctermfg=darkblue ctermbg=gray
 hi ModeMsg guifg=#404040 guibg=#C0C0C0
 hi MoreMsg guifg=darkturquoise guibg=#188F90
-hi NonText guibg=#334C75 guifg=#9FADC5
+hi NonText guibg=NONE guifg=#9FADC5
+hi EndOfBuffer guibg=#334C75 guifg=#9FADC5
 hi Question	guifg=#F4BB7E
 "hi Search	 guifg=#2050D0 guibg=#b0ffff ctermfg=darkblue ctermbg=gray
 "hi Search guibg=#C0C0C0 guifg=#066060
